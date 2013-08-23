@@ -1,0 +1,58 @@
+#img{
+	background-image: url("http://www.nwfdailynews.com/polopoly_fs/1.164591.1372342826!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_445/luxe-sports-grill.jpg");
+	width: 98%;
+}
+.col-xs-6,col-md-4{
+	float: right;
+}
+
+#logo{
+	font-size: 25px;
+}
+.jumbotron,.page-header{
+	background-color: silver;
+}
+.media-object{
+	height: 30px;
+	width: 30px;
+}
+
+.navbar,.navbar-default{
+	background-color: silver;
+}
+
+form{
+	margin-top: 150px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 50%;
+}
+.news-img{
+	width: 200px;
+	height: 400px;
+}
+
+.row{
+	background-color: grey;
+}
+.col-lg-4{
+	width: 80%;
+}
+.pager{
+	clear:both;
+}
+#espn{
+	height: 200px;
+	width: 400px;
+	float:;left
+}
+.main{
+	clear:both;
+}
+#description{
+	float:left;
+}
+.checkbox-inline{
+	width:190px;
+	height:auto;
+}

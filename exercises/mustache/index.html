@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>Mustache Template</title>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/application2.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/application.css"/>
+</head>
+	<script type="text/template" id="all-cafe-template">
+		{{#object}}
+
+			//{{name}}
+
+		{{/object}}
+
+
+		{{#movies}}
+					
+				<h1>{{title}}<br></h1>
+				<img src="{{posters.profile}}" style="float:left">
+				<h4>Rating: {{ratings.audience_score}} <br></h4>
+				Release Date: {{release_dates.theater}}<br><br>
+				Critics Census: {{critics_consensus}}<br>
+				{{#abridged_cast}}
+					{{name}} plays
+					{{#characters}}
+						{{.}}
+					{{/characters}}
+						<br>
+						
+				{{/abridged_cast}}
+		{{/movies}} 
+</script>
+		<ul id="list">
+			<li>
+				
+
+			</li>
+		</ul>
+	
+<body>
+
+</body>
+</html>

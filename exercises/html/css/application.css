@@ -1,0 +1,72 @@
+/*Styles for this page
+  Created by Andrew Rodriguez on 08/07/13*/
+/* Set the style of index*/
+
+html{background-color: #061639;}
+body{
+	width: 860px;
+	padding: 20px;
+	margin: 10px auto;
+	background-color: #fff;
+	-webkit-border-radius:-moz-border-radius:15px;
+	border-radius: 15px
+}
+
+#intro{color: #5a0002}
+h1,h2,h3{color:#5a0002;}
+
+.question{
+	font-style: italic;
+}
+ul{list-style-type: circle;}
+ol{list-style-type: decimal-leading-zero;}
+
+a{text-decoration: none;}
+a:hover,a:active{text-decoration: underline;}
+
+div#text label{
+	display: inline-block; 
+	width: 8em; 
+	margin-bottom: 3px;
+}
+div#text input{
+	margin-bottom: 3px;
+	border:1px solid #333;
+}
+ div.checkbox label{
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#other_details{width: 30%;}
+
+
+#radio{margin-left: 8em}
+
+caption{
+	text-align: left;
+	color:#5a0002;
+	font-size: 1.5em;
+}
+
+th{
+	background-color: #5a0002;
+	color:white;
+}
+th,tr,td{
+	border: 1px solid #5a0002;
+	padding:5px 
+}
+th,tr,td{text-align: left}
+th:nth-child(even){text-align: center;}
+td:nth-child(even){text-align: center;}
+
+#courses,#location{
+	float:left;
+	margin-right: 50px
+}
+#cc{
+	clear:both;
+}
+
+/*#courses,#location{border:1px solid black;}*/

@@ -1,0 +1,7 @@
+	<?xml version"1.0"?>
+	<person>;
+		<firstname>Andrew</firstname>
+		<lastname>Rodriguez</lastname>
+		<age>28</age>
+		<bands><band>Intocable</band><band>Ramon Ayala</band></bands>
+	</person>
