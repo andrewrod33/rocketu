@@ -1,163 +1,99 @@
 <!doctype html>
 <html>
-  <head>
+    <head>
+    <link rel="stylesheet" type="text/css" href="css/application.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <title>Settings</title>
-    <link rel="stylesheet" type="text/css" href="css/application.css">
     <script type "text/javascript" src="js/jquery-2.0.3.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header"></button>
-      <a class="navbar-brand" href="http://bootcamp.rocketu.com/product/index.html">YPSA</a>
+    <script type="text/javascript" src="js/mustache.js"></script>
+
+    </head>
+    <body id="settings">
+        <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header"></button>
+        <a class="navbar-brand" href="http://bootcamp.rocketu.com/product/index.html">LT</a>
         </div>
-          <ul class="nav nav-tabs pull-right">
-            <li class="active"><a href="http://bootcamp.rocketu.com/product/main.html">Main</a></li>
-            <li><a href="http://bootcamp.rocketu.com/product/login.html">Logout</a></li>
-          </ul>
-    </nav>
-   
+            <ul class="nav nav-tabs pull-right">
+                <li class="active"><a href="http://bootcamp.rocketu.com/product/main.html">Main</a></li>
+            </ul>
+        </nav>
+
+        <script>    
+        
+            $(document).ready(function(){
+                $.ajax(
+                    {
+                        url: 'http://api.espn.com/v1/sports/football/nfl/teams?apikey=6pz3x9tcb269689jvg23swm8',
+                        type: 'GET',
+                        dataType: 'json',
+                        data:{
+                        },
+                        success: function(json) {
+                            console.log(json);
+                            $('div#boxes').html(Mustache.render($("#newBoxes").html(), json ))
+                        }
+                });
+            });
+                
+
+        </script>
+        <script type="text/template" id="newBoxes">
+        <h3>Please Select Your Favorite Team</h3>
+            {{#sports}}
+                {{#leagues}}
+                    {{#teams}}
+                    <div class="float"><label class="espnBoxes"><input type="checkbox" class="chkBox" class="" name="{{name}}" value="{{id}}"/>{{location}} {{name}}</label></div>
+
+                    {{/teams}}
+                     
+                {{/leagues}}
+            {{/sports}}
+
+        </script>
+        <form name="teams" method="post" action="http://bootcamp.rocketu.com/product/main.html">
+            <div id="boxes"></div>
+            <input type="submit" id="sub" value="Submit" onClick="getTeams();">
+        </form>
+
+        <script type="text/javascript">
+
+            function getTeams(){
+                var getLists = []
+                var getId;
+                var x = document.getElementsByClassName('chkBox');
+
+                for(var i=0; i<x.length; i++){
+                    if(x[i].checked){
+                        getId= x[i].getAttribute('value');
+
+                        getLists.push(getId)
+                        
+                        localStorage.setItem('getTeams',JSON.stringify(getLists));
+                        console.log(localStorage.getItem('getTeams'));
+                    }else{
+                       
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
+        </script>
+
+       
+       
+
+    <!--<script type "text/javascript">
     
 
-     <h2> Choose your Team</h2>
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Arizona Cardinals
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Atlanta Falcons
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Baltimore Ravens
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Buffalo Bills
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Carolina Panthers
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Chicago Bears
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Cincinnati Bengals
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Cleveland Browns
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Dallas Cowboys
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Denver Broncos
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Detroit Lions
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Green Bay Packers
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Houston Texans
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Indianapolis Colts
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Jacksonville Jaguars
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Kansas City Chiefs
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Miami Dolphins
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Minnesota Vikings
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> New England Patriots
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> New Orleans Saints
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> New York Giants
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> New York Jets
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Oakland Raiders
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Philadelphia Eagles
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Pittsburgh Steelers
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> San Diego Chargers
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> San Francisco 49ers
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Seattle Seahawks
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> St. Louis Rams
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Tampa Bay Buccaneers
-    </label></br>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox2" value="option2"> Tennesse Titans
-    </label>
-
-    <label class="checkbox-inline">
-    <input type="checkbox" id="inlineCheckbox1" value="option1"> Washington Redskins
-    </label>
-      
-
-
-
-
-
-
-
-
-
-
-
+      // });
+    action="http://bootcamp.rocketu.com/product/main.html"
+    </script>-->
     </body>
 </html>

@@ -1,5 +1,5 @@
 #img{
-	background-image: url("http://www.nwfdailynews.com/polopoly_fs/1.164591.1372342826!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_445/luxe-sports-grill.jpg");
+	background-image: url("http://www.lewallpaper.com/newresolution/1920x1440-nature-with-flowers-free-football-field-grungy-athlete.jpg");
 	width: 98%;
 }
 .col-xs-6,col-md-4{
@@ -41,18 +41,72 @@ form{
 .pager{
 	clear:both;
 }
-#espn{
-	height: 200px;
-	width: 400px;
-	float:;left
-}
+
 .main{
 	clear:both;
+	color:white;
 }
 #description{
+	text-align: center;
+	display:inline;
+	background-color: black;
+	color:red;
+}
+#setTitle{
+	clear:both;
+}
+#main{
+	list-style-type: none;
+}
+#gatorade{
+	background-color: black;
+	background-image: url("http://cdn0.sbnation.com/campaigns_images/14339/827474794_Madden25-Reskin-LEFT.jpg"),url("http://cdn0.sbnation.com/campaigns_images/14337/838506424_Madden25-Reskin-RIGHT.jpg");
+	background-position: left top, right top, top center;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	background-size: auto, auto, auto;
+	background-attachment: fixed, fixed, fixed;
+}
+.font{
+	color:#C2B2B2;
+}
+
+.middle{
+	text-align: center;
+	width:10em;
+	display:inline;
+	background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+	color:white;
+	word-wrap: break-word;
+}
+.espnBoxes{
+	 text-align: left;
+	 display:inline;
+	 margin-right: 10px;
+}
+#newsHead{
+	text-align: center;
+	width:1em;
+	display:inline;
+	background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+	color:white;
+}
+.float{
+	width: 300px;
 	float:left;
+
 }
-.checkbox-inline{
-	width:190px;
-	height:auto;
+#sub{
+	align:bottom;
 }
+#news { width: 800px; margin: 0 auto; }
+#news > li { 
+	list-style-type: none; border: 1px dotted grey; margin: 10px; padding: 10px; 
+	background: rgba(255,255,255,0.2);
+}
+#news > li ul li { list-style-type: none; margin: 0; padding: 0; display: inline-block; }
+#news > li ul li img { max-height: 200px; }
+

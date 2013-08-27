@@ -9,149 +9,65 @@
 		<script type="text/javascript" src="js/espn.js"></script>
 		<script type="text/javascript"src="js/fblogout.js"></script>
 	</head>
-	<body>
+	<body id="gatorade" class="madden">
 		<nav class="navbar navbar-inverse" role="navigation">
 	    	<div class="navbar-header"></button>
 	    		
-	    	<a class="navbar-brand" href="http://bootcamp.rocketu.com/product/index.html">YPSA</a>
+	    	<a class="navbar-brand" href="http://bootcamp.rocketu.com/product/index.html">LT</a>
 	        </div>
-	          <ul class="nav nav-tabs pull-right">
+	        <ul class="nav nav-tabs pull-right">
 	            <li class="active"><a href="http://bootcamp.rocketu.com/product/settings.html">Settings</a></li>
 	            <li>
 	            	<fb:login-button autologoutlink="true" onlogin="top.location = '/product/index.html';">
 					</fb:login-button>
 				</li>
-	          </ul>
+	        </ul>
     	</nav>
-    	<h1>Your News</h1>
-			<script type="text/template" id="new-news">
+    	<p id="newsHead">Your News</p>
+		<script type="text/template" id="new-news">
 			{{#headlines}}
-				
-				{{#images}}
-					<a href="{{linktext}}"/><img src="{{url}}" id="espn"/></a>
-				{{/images}}
 
-			<h2 class="main">{{linkText}}<br></h2>
-			<h3>{{description}}</h3>
-			<a href ="{{links.web.href}}" id="description">Read</a><br>			
+				<li>
+					
+					<ul>
+					{{#images}}
+						<li>
+
+							<a href="{{links.web.href}}" target="_blank">
+								{{linktext}}
+								<img src="{{url}}"/>
+							</a>
+						</li>
+					{{/images}}
+
+					</ul>
+					<h3>{{linkText}}</h3>
+					<p>{{description}}</p>
+					<a href ="{{links.web.href}}" target="_blank">Read More &raquo;</a>
+					<div>
+						<button type="button" class="btn btn-info" onclick="window.open(this.href,'_parent');return false;">Like Source</button>
+						<button type="button" class="btn btn-danger" onclick="parentNode.parentNode.removeChild(parentNode)">Remove Source</button>
+					</div>
+					Source:{{source}}
+					</li>
 			{{/headlines}}
-
-		</script>
-		<script type="text/template" id="all-news-template">
-		
-			
-			{{#.}}
-				<img src="{{primary_image_311x210}}"/>
-				<h2 class="main">{{title}}</h2><br>
-
-			{{/.}}
 		</script>
 	
+	
+	
+		<div class="middle">
+			<ul id="news">
 
-		<!--{{#san-francisco-49ers}}
-				{{title}}
-				
-			{{/san-francisco-49ers}}
-
-			//{{#.}}
-				//<img src="{{primary_image_311x210}}"/>
-				//{{title}}<br>
-
-			//{{/.}}-->
-
-
-
-
-
-
-		<ul id="news">
-			<li>
-				
-
-			</li>
-		</ul>
-		<ul id="news2">
-			<li>
-				
-
-			</li>
-		</ul>
-	<!--	
-
-		<div class="row">
-			<div class="col-lg-4">
-		    	<div class="thumbnail">
-		    		<img src="http://media.kvue.com/images/470*261/20130617-barbara-israel-web.jpg" class="news-img">
-		    	<div class="caption">
-			        <h3>Raiders needs offensive line help</h3>
-			        <p>Soure:Silver and Black Pride</p>
-			        <p>Date:8/16 Time:10:00AM</p>
-			        <p><a href="#" class="btn btn-primary">Expand</a> <a href="#" class="btn btn-default">Mark</a></p>
-		      	</div>
-		    	</div>
-			</div>
-		<div>
-
-		<div class="row">
-			<div class="col-lg-4">
-		    	<div class="thumbnail">
-		    		<img src="http://media.kvue.com/images/470*261/20130617-barbara-israel-web.jpg" class="news-img">
-		    	<div class="caption">
-			        <h3>Raiders needs offensive line help</h3>
-			        <p>Soure:Silver and Black Pride</p>
-			        <p>Date:8/16 Time:10:00AM</p>
-			        <p><a href="#" class="btn btn-primary">Expand</a> <a href="#" class="btn btn-default">Mark</a></p>
-		      	</div>
-		    	</div>
-			</div>
+			</ul>
+		</div>
 		
-			<div class="col-lg-4">
-		    	<div class="thumbnail">
-		    		<img src="http://media.kvue.com/images/470*261/20130617-barbara-israel-web.jpg" class="news-img">
-		    	<div class="caption">
-			        <h3>Raiders needs offensive line help</h3>
-			        <p>Soure:Silver and Black Pride</p>
-			        <p>Date:8/16 Time:10:00AM</p>
-			        <p><a href="#" class="btn btn-primary">Expand</a> <a href="#" class="btn btn-default">Mark</a></p>
-		      	</div>
-		    	</div>
-			</div>
-			<div class="col-lg-4">
-		    	<div class="thumbnail">
-		    		<img src="http://media.kvue.com/images/470*261/20130617-barbara-israel-web.jpg" class="news-img">
-		    	<div class="caption">
-			        <h3>Raiders needs offensive line help</h3>
-			        <p>Soure:Silver and Black Pride</p>
-			        <p>Date:8/16 Time:10:00AM</p>
-			        <p><a href="#" class="btn btn-primary">Expand</a> <a href="#" class="btn btn-default">Mark</a></p>
-		      	</div>
-		    	</div>
-			</div>
-		
-			<div class="col-lg-4">
-		    	<div class="thumbnail">
-		    		<img src="http://media.kvue.com/images/470*261/20130617-barbara-israel-web.jpg" class="news-img">
-		    	<div class="caption">
-			        <h3>Raiders needs offensive line help</h3>
-			        <p>Soure:Silver and Black Pride</p>
-			        <p>Date:8/16 Time:10:00AM</p>
-			        <p><a href="#" class="btn btn-primary">Expand</a> <a href="#" class="btn btn-default">Mark</a></p>
-		      	</div>
-		    	</div>
-			</div>
+	
+	
 
-		<div>
 
-			<ul class="pager">
-				<li class="previous"><a href="#">&larr; Older</a></li>
-				<li class="next"><a href="#">Newer &rarr;</a></li>
-			</ul> 
 
--->
-	<ul id="espn">
-	</ul>
-		<div id="fb-root"></div>
-      <script>
+	<div id="fb-root"></div>
+    <script>
         var fbAccessToken;
         // Additional JS functions here
         window.fbAsyncInit = function() {
@@ -200,7 +116,7 @@
 
         // Load the SDK asynchronously
         (function(d){
-          var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        	var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement('script'); js.id = id; js.async = true;
             js.src = "//connect.facebook.net/en_US/all.js";
@@ -208,7 +124,10 @@
             }(document));
          // Here we run a very simple test of the Graph API after login is successful. 
           // This testAPI() function is only called in those cases. 
-        
-      </script>
+       
+    </script>
+  
+
+
     </body>
 </html>
