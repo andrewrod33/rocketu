@@ -1,0 +1,13 @@
+class Vehicle(object):
+
+ManualTrans
+ManualCar
+Motorbike
+RaceCar
+StreetCar
+Autotrans
+Autocar
+Boat
+
+
+class Game(object):

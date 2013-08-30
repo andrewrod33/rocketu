@@ -86,13 +86,9 @@ form{
 	 margin-right: 10px;
 }
 #newsHead{
-	text-align: center;
-	width:1em;
-	display:inline;
-	background-color: black;
-    margin-left: auto;
-    margin-right: auto;
+	font-size:40px;
 	color:white;
+	text-align:center;
 }
 .float{
 	width: 300px;
@@ -100,8 +96,13 @@ form{
 
 }
 #sub{
-	align:bottom;
+	float: left;
+	clear: left;
+	width: 100px;
+	margin: 10px auto;
+	padding: 2px 5px;
 }
+
 #news { width: 800px; margin: 0 auto; }
 #news > li { 
 	list-style-type: none; border: 1px dotted grey; margin: 10px; padding: 10px; 
@@ -109,4 +110,5 @@ form{
 }
 #news > li ul li { list-style-type: none; margin: 0; padding: 0; display: inline-block; }
 #news > li ul li img { max-height: 200px; }
+
 
