@@ -1,0 +1,23 @@
+{% load i18n %}
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form method="POST">
+{% load cache %}
+{% cache 600 name %}
+{{ form }}
+{% endcache %}
+{#    Username:{{ form.username }}#}
+{#    Email:{{ form.email }}#}
+{#    Password:{{ form.password }}#}
+
+    <input type="submit" value="Submit Answer" />
+{#    {% csrf_token %}#}
+    {% if message %}
+        {{ message }}
+    {% endif %}
+</form>
+</body>

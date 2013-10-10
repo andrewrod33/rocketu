@@ -1,0 +1,31 @@
+<!--&lt;!&ndash; MyApp/templates.home.html &ndash;&gt;-->
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+    <!--<title>Game</title>-->
+    <!--&lt;!&ndash;<title>Hello {{name}}</title>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Hello {{count}}</h1>-->
+    <!--&lt;!&ndash;<h1>Hello {{name}}</h1>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
+
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {{ poll.question }}
+    <ul>
+    {%  for answer in poll.answers.all %}
+
+        <li>{{ answer.answer }}</li>
+    {%  endfor %}
+    </ul>
+
+</body>
+
+
+</html>

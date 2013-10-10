@@ -1,0 +1,42 @@
+@color-red:#f95759;
+@color-peach:#fda099;
+@color-lime:#d9f3cb;
+@color-seafoam:#8ac2b0;
+@color-grey:#ccc;
+@base-color:#8AC2B0;
+
+.border-radius(@radius){
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.box(@padding,@border-color, @border-radius) {
+  padding:@padding;
+  border: 1px solid @border-color;
+  .border-radius(@border-radius);
+}
+
+body{
+  background:#ffffff;
+}
+
+div {
+  .box(20px, @color-grey, 20px)
+}
+p {color: @color-red;
+  .border-radius(40px);
+  border:1px solid @color-red;
+
+;
+}
+/*Mixins*/
+
+div {
+  .border-radius(10px);
+  border:1px solid @color-grey
+}
+
+div.body {
+    p {color: @color-seafoam}
+    ul {color: @color-peach}
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+<h1>{{ poll.question }}</h1>
+
+<form method="post">
+{% csrf_token %}
+{% for answer in poll.answers.all %}
+    <input type="radio" name="answer" id="choice{{ forloop.counter }}" value="{{ poll.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ answer.answer  }}</label><br />
+
+{% endfor %}
+{% for answer in poll.answers.all %}
+     <li>
+         {{answer.answer}}
+         <em>{{ answer.vote_count }} votes</em>
+     </li>
+{% endfor %}
+
+<input type="submit" value="Vote" />
+</form>
+
+
+{#<h1>{{ poll.question }}</h1>#}
+{##}
+{#<ul>#}
+{#{% for answer in poll.answers.all %}#}
+{#    <li>{{ poll.pollanswer }} -- {{ answer.votes }} vote{{ answer.votes|pluralize }}</li>#}
+{#{% endfor %}#}
+{#</ul>#}
+
+
+

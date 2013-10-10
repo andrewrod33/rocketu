@@ -1,0 +1,17 @@
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form method="POST">
+{#    Username:{{ form.username }}#}
+{#    Email:{{ form.email }}#}
+{#    Password:{{ form.password }}#}
+    {{ form }}
+    <input type="submit" value="Submit Answer" />
+    {% if message %}
+        {{ message }}
+    {% endif %}
+</form>
+</body>
